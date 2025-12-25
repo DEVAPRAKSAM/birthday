@@ -145,3 +145,43 @@ button:hover {
   }
 }  backdrop-filter: blur(7px);
 }
+.divider {
+  margin: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  width: 80px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.divider span {
+  margin: 0 14px;
+  font-size: 1.6rem;
+  color: #b6dcff;
+}
+.center-quote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #cfe9ff;
+  margin: 40px auto;
+  max-width: 500px;
+  opacity: 0.9;
+}
+.sparkle {
+  margin: 35px 0;
+  font-size: 1.4rem;
+  color: #9ad7ff;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
