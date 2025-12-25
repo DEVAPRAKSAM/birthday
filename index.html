@@ -3,66 +3,53 @@
 <head>
   <title>For Vaishnavi ❤️</title>
   <link rel="stylesheet" href="style.css">
-</head>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-<body>
+</head>
 
-<!-- PAGE 1 -->
+<body onload="blast()">
+
+<!-- INTRO PAGE -->
 <section class="page">
   <h1>Happy Birthday Vaishnavi 💖</h1>
-<img src="img/her.jpg" width="220" style="border-radius:20px;">>
-  <p>You are not just special…  
-     You are my favourite person 😌</p>
+  <img src="img/her.jpg" class="photo">
+  <p>You are not just special…<br>You are my favourite person 😌</p>
 </section>
 
-<!-- PAGE 2 -->
+<!-- CARD SLIDER -->
+<div class="card active">
+  <h2>Her Smile 😊</h2>
+  <img src="img/p1.jpg">
+  <p>This smile heals me ❤️</p>
+  <button onclick="next()">Next</button>
+</div>
+
+<div class="card">
+  <h2>My Safe Place 🌸</h2>
+  <img src="img/p2.jpg">
+  <p>You feel like home 🏠</p>
+  <button onclick="next()">Next</button>
+</div>
+
+<div class="card">
+  <h2>Always You 💖</h2>
+  <img src="img/p3.jpg">
+  <p>I choose you again and again 😌</p>
+  <button onclick="next()">Next</button>
+</div>
+
+<!-- FINAL LETTER -->
 <section class="page">
-  <h2>The Girl I Know 💫</h2>
-  <p>
-    Vaishnavi G P 💕 <br><br>
-    Your smile makes my bad days better 😊<br>
-    Your silence teaches me patience 🌸<br>
-    Your presence feels like home 🏠
-  </p>
-</section>
-
-<!-- PAGE 3 -->
-<section class="page">
-  <h2>One Small Truth ❤️</h2>
-  <p>
-    I may not be perfect…<br>
-    But my love for you is real 💯<br><br>
-    I choose you.<br>
-    Again and again 💖
-  </p>
-</section>
-
-
-  <section class="page">
   <h2>One Last Thing 💖</h2>
+  <img src="img/p4.jpg" class="photo">
   <p>
     Vaishnavi…<br><br>
-    Naa romba perfect illa 😅<br>
+    Naa perfect illa 😅<br>
     Aana unaku honest ah love pannren ❤️<br><br>
-
-    Un sirippu enaku peace 😌<br>
-    Un silence kooda enaku puriyum 🌸<br><br>
-
-    Birthday matum illa…<br>
     Everyday unaku special ah irukanum nu than en wish 🎂💫<br><br>
-
     Happy Birthday My Love 💕
   </p>
-  </section>
+</section>
 
-  
-<script>
-  confetti({
-    particleCount: 200,
-    spread: 100,
-    origin: { y: 0.6 }
-  });
-</script>
-  
+<script src="script.js"></script>
 </body>
 </html>
