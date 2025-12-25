@@ -24,3 +24,10 @@ p {
   font-size: 18px;
   padding: 20px;
 }
+h2 {
+  color: #d63384;
+}
+
+.page:last-child {
+  background-color: #fff0f6;
+}
