@@ -276,6 +276,15 @@ button:hover {
   100% { transform: translateY(0); }
 }
 /* ================= FLOATING HEARTS ================= */
+
+.page,
+.card,
+.divider,
+.center-quote,
+.sparkle {
+  position: relative;
+  z-index: 2;}
+
 #heart-container {
   position: fixed;
   bottom: 0;
