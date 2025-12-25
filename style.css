@@ -1,48 +1,100 @@
+/* ===== GLOBAL ===== */
 body {
   margin: 0;
-  font-family: Arial;
-  background: #ffe6f0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #eaf6ff;
   text-align: center;
 }
 
-.page {
+/* ===== SECTIONS ===== */
+.page, .card {
   min-height: 100vh;
-  padding-top: 60px;
+  padding-top: 70px;
+  box-sizing: border-box;
 }
 
-.photo, img {
-  width: 220px;
-  border-radius: 20px;
-  margin: 20px 0;
+/* ===== HEADINGS ===== */
+h1 {
+  font-size: 2.4rem;
+  color: #9ad1ff;
+  margin-bottom: 10px;
 }
 
+h2 {
+  font-size: 2rem;
+  color: #b7e3ff;
+}
+
+/* ===== TEXT ===== */
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  padding: 0 20px;
+  color: #eaf6ff;
+}
+
+/* ===== IMAGES ===== */
+.photo,
+.card img {
+  width: 230px;
+  border-radius: 25px;
+  margin: 25px 0;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Image hover effect */
+.photo:hover,
+.card img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== CARD SLIDER ===== */
 .card {
   display: none;
-  min-height: 100vh;
-  padding-top: 60px;
 }
 
 .card.active {
   display: block;
-  animation: fade 0.8s ease;
+  animation: slideFade 0.9s ease;
 }
 
+/* ===== BUTTON ===== */
 button {
-  padding: 12px 25px;
+  margin-top: 20px;
+  padding: 14px 30px;
   border: none;
-  background: #ff1a75;
-  color: white;
+  border-radius: 30px;
   font-size: 18px;
-  border-radius: 25px;
+  font-weight: bold;
+  color: #0f2027;
+  background: linear-gradient(135deg, #6dd5fa, #ffffff);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@keyframes fade {
+button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(109, 213, 250, 0.6);
+}
+
+/* ===== ANIMATION ===== */
+@keyframes slideFade {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
+/* ===== FINAL LETTER BG ===== */
+.page:last-child {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+}
+
