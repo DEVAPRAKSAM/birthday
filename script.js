@@ -70,3 +70,26 @@ function blast() {
     });
   }, 700);
 }
+/* ================= FLOATING HEARTS ================= */
+
+const heartContainer = document.getElementById("heart-container");
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+
+  const hearts = ["💙", "❤️", "💖"];
+  heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = 6 + Math.random() * 4 + "s";
+
+  heartContainer.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 10000);
+}
+
+// create heart every 500ms
+setInterval(createHeart, 500);
