@@ -1,10 +1,16 @@
 body {
-  background-color: #ffe6f0;
-  text-align: center;
+  margin: 0;
   font-family: Arial;
+  background-color: #ffe6f0;
 }
 
-h1 {
+.page {
+  height: 100vh;
+  text-align: center;
+  padding-top: 60px;
+}
+
+h1, h2 {
   color: #ff1a75;
 }
 
@@ -14,12 +20,7 @@ h1 {
   margin-top: 20px;
 }
 
-button {
-  margin-top: 20px;
-  padding: 12px 20px;
+p {
   font-size: 18px;
-  background-color: #ff1a75;
-  color: white;
-  border: none;
-  border-radius: 25px;
+  padding: 20px;
 }
