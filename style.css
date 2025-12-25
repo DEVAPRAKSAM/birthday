@@ -1,33 +1,48 @@
 body {
   margin: 0;
   font-family: Arial;
-  background-color: #ffe6f0;
+  background: #ffe6f0;
+  text-align: center;
 }
 
 .page {
-  height: 100vh;
-  text-align: center;
+  min-height: 100vh;
   padding-top: 60px;
 }
 
-h1, h2 {
-  color: #ff1a75;
-}
-
-.photo {
-  width: 200px;
+.photo, img {
+  width: 220px;
   border-radius: 20px;
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
-p {
+.card {
+  display: none;
+  min-height: 100vh;
+  padding-top: 60px;
+}
+
+.card.active {
+  display: block;
+  animation: fade 0.8s ease;
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  background: #ff1a75;
+  color: white;
   font-size: 18px;
-  padding: 20px;
-}
-h2 {
-  color: #d63384;
+  border-radius: 25px;
 }
 
-.page:last-child {
-  background-color: #fff0f6;
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
