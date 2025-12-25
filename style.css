@@ -1,90 +1,101 @@
-/* ===== GLOBAL ===== */
+/* ================= GOOGLE FONT ================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap');
+
+/* ================= BODY ================= */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: #eaf6ff;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(160deg, #0b1f3a, #102b4c, #1b3b6f);
+  color: #eaf4ff;
   text-align: center;
 }
 
-/* ===== SECTIONS ===== */
-.page, .card {
+/* ================= SECTIONS ================= */
+.page,
+.card {
   min-height: 100vh;
   padding-top: 70px;
   box-sizing: border-box;
 }
 
-/* ===== HEADINGS ===== */
+/* ================= HEADINGS ================= */
 h1 {
-  font-size: 2.4rem;
-  color: #9ad1ff;
-  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.7rem;
+  color: #cfe9ff;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
 }
 
 h2 {
-  font-size: 2rem;
-  color: #b7e3ff;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.1rem;
+  color: #b6dcff;
+  margin-bottom: 10px;
 }
 
-/* ===== TEXT ===== */
+/* ================= TEXT ================= */
 p {
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
   padding: 0 20px;
-  color: #eaf6ff;
+  color: #e6f2ff;
 }
 
-/* ===== IMAGES ===== */
+/* ================= IMAGES ================= */
 .photo,
 .card img {
   width: 230px;
-  border-radius: 25px;
-  margin: 25px 0;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  border-radius: 26px;
+  margin: 28px 0;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 
-/* Image hover effect */
 .photo:hover,
 .card img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  transform: scale(1.07);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.65);
 }
 
-/* ===== CARD SLIDER ===== */
+/* ================= CARD TRANSITION ================= */
 .card {
   display: none;
 }
 
 .card.active {
   display: block;
-  animation: slideFade 0.9s ease;
+  animation: softSlide 0.9s ease;
 }
 
-/* ===== BUTTON ===== */
+/* ================= BUTTON ================= */
 button {
-  margin-top: 20px;
-  padding: 14px 30px;
+  margin-top: 26px;
+  padding: 14px 36px;
   border: none;
-  border-radius: 30px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #0f2027;
-  background: linear-gradient(135deg, #6dd5fa, #ffffff);
+  border-radius: 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: #0b1f3a;
+  background: linear-gradient(135deg, #9ad7ff, #dff1ff);
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 12px 30px rgba(154, 215, 255, 0.55);
+  transition: all 0.35s ease;
 }
 
 button:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(109, 213, 250, 0.6);
+  box-shadow: 0 16px 40px rgba(154, 215, 255, 0.75);
 }
 
-/* ===== ANIMATION ===== */
-@keyframes slideFade {
+/* ================= ANIMATION ================= */
+@keyframes softSlide {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(45px);
   }
   to {
     opacity: 1;
@@ -92,9 +103,8 @@ button:hover {
   }
 }
 
-/* ===== FINAL LETTER BG ===== */
+/* ================= FINAL LETTER FEEL ================= */
 .page:last-child {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(7px);
 }
-
