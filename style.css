@@ -47,11 +47,13 @@ p {
 /* ================= IMAGES ================= */
 .photo,
 .card img {
-  width: 300px;
+  width: 460px;
+  margin-top: 15px;
   max-width: 90%;
   border-radius: 28px;
   margin: 30px 0;
   box-shadow: 0 20px 55px rgba(0, 0, 0, 0.5);
+  border: 3px solid rgba(255, 255, 255, 0.25);
 }
 
 .photo:hover,
