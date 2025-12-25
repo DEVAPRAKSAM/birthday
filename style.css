@@ -11,10 +11,18 @@
 /* ================= BODY ================= */
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(160deg, #0b1f3a, #102b4c, #245fa3);
+  background: linear-gradient(-45deg, #0b1f3a, #102b4c, #245fa3, #1a4fa3);
+  background-size: 400% 400%;
+  animation: bgMove 18s ease infinite;
   color: #eaf4ff;
   text-align: center;
   overflow-x: hidden;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* ================= COMMON SECTIONS ================= */
