@@ -1,3 +1,3 @@
 function showLove() {
-  alert("I love you ❤️");
+  alert("This website is only for you ❤️");
 }
