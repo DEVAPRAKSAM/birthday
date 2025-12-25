@@ -20,15 +20,17 @@ body {
 /* ================= COMMON SECTIONS ================= */
 .page,
 .card {
-  min-height: 100vh;
-  padding-top: 80px;
-  padding-bottom: 40px;
+  min-height: auto; /* removes full screen forced gap */
+  padding-top: 50px; /* less top space */
+  padding-bottom: 30px; /* less bottom space */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   position: relative;
   z-index: 1;
+  margin-top: 20px;   /* small gap between sections */
+  margin-bottom: 20px;
 }
 
 /* ================= HEADINGS ================= */
