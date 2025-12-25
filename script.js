@@ -1,55 +1,72 @@
-/* ================= CARD SLIDER LOGIC ================= */
+/* ================= GLOBAL ================= */
 
+// Card index
 let current = 0;
-let cards = document.querySelectorAll(".card");
 
-/* Show only the current card */
+// All cards
+const cards = document.querySelectorAll(".card");
+
+// Intro section
+const intro = document.getElementById("intro");
+
+// Final page
+const finalPage = document.querySelector(".page:last-child");
+
+/* ================= SHOW CARD ================= */
 function showCard(index) {
   cards.forEach((card, i) => {
     card.classList.remove("active");
     if (i === index) {
       card.classList.add("active");
-      card.scrollIntoView({ behavior: "smooth" });
+      card.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   });
 }
 
-/* Next button function */
+/* ================= NEXT BUTTON ================= */
 function next() {
   if (current < cards.length - 1) {
     current++;
     showCard(current);
   } else {
-    // Last card reached – scroll to final letter
-    document.querySelector(".page:last-child").scrollIntoView({
-      behavior: "smooth"
+    // Last card reached → scroll to final letter
+    finalPage.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
     });
   }
 }
 
-/* ================= INTRO → STORY START ================= */
-
+/* ================= START STORY ================= */
 function startStory() {
-  current = 0;
-  showCard(current);
+  // Hide intro smoothly
+  intro.style.opacity = "0";
+  intro.style.transition = "opacity 0.6s ease";
+
+  setTimeout(() => {
+    intro.style.display = "none";
+    current = 0;
+    showCard(current);
+  }, 600);
 }
 
 /* ================= CONFETTI BLAST ================= */
-
 function blast() {
-  // First blast
+  // Soft first blast
   confetti({
-    particleCount: 160,
-    spread: 120,
+    particleCount: 120,
+    spread: 90,
+    scalar: 0.9,
     origin: { y: 0.6 }
   });
 
-  // Small delayed blast (smooth feel)
+  // Gentle second wave
   setTimeout(() => {
     confetti({
-      particleCount: 90,
-      spread: 90,
-      origin: { y: 0.4 }
+      particleCount: 70,
+      spread: 70,
+      scalar: 0.8,
+      origin: { y: 0.5 }
     });
-  }, 600);
+  }, 700);
 }
