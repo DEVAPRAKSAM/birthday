@@ -107,3 +107,7 @@ function typeEffect() {
 }
 
 window.addEventListener("load", typeEffect);
+/* ================= REPLAY ================= */
+function replay() {
+  window.location.reload();
+}
