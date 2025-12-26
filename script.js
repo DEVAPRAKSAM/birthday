@@ -29,17 +29,17 @@ function next() {
 }
 
 /* ================= SAFE MUSIC PLAYBACK ================= */
-function playMusicSafe() {
-  if (!music) return;
-  music.volume = 0.5;
-  
-  // Try play
-  const playPromise = music.play();
-  if (playPromise !== undefined) {
-    playPromise.catch(() => {
-      // If rejected, wait for next tap
-      console.log("Audio play blocked — waiting for interaction");
-    });
+const music = document.getElementById("bgm");
+const musicBtn = document.getElementById("musicBtn");
+
+function toggleMusic() {
+  if (music.paused) {
+    music.volume = 0.5;
+    music.play();
+    musicBtn.innerText = "⏸ Pause Music";
+  } else {
+    music.pause();
+    musicBtn.innerText = "🔊 Play Music";
   }
 }
 
