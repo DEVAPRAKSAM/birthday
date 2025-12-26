@@ -134,7 +134,7 @@ function unlock() {
   const password = document.getElementById("pwd").value;
 
   // CHANGE PASSWORD HERE 👇
-  if (password === "vaishnavi") {
+  if (password === "11012005") {
     document.getElementById("lockScreen").style.display = "none";
   } else {
     alert("Wrong password 💔");
