@@ -241,3 +241,18 @@ button:hover {
   p { font-size: 1.05rem; }
   .photo, .card img { width: 280px; }
 }
+#musicBtn {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  padding: 10px 16px;
+  border-radius: 30px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #9ad7ff, #e8f6ff);
+  color: #0b1f3a;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 8px 20px rgba(154,215,255,0.6);
+}
