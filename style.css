@@ -123,6 +123,156 @@ button:hover {
   box-shadow: 0 18px 44px rgba(154, 215, 255, 0.75);
 }
 
+/* ================= MUSIC BUTTON ================= */
+#musicBtn {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  padding: 10px 16px;
+  border-radius: 30px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #9ad7ff, #e8f6ff);
+  color: #0b1f3a;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 8px 20px rgba(154, 215, 255, 0.6);
+}
+
+/* ================= DIVIDER ================= */
+.divider {
+  margin: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  width: 80px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.divider span {
+  margin: 0 14px;
+  font-size: 1.6rem;
+  color: #b6dcff;
+}
+
+/* ================= CENTER QUOTE ================= */
+.center-quote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #cfe9ff;
+  margin: 30px auto;
+  max-width: 520px;
+  opacity: 0.9;
+  position: relative;
+  z-index: 3;
+}
+
+/* ================= SPARKLE ================= */
+.sparkle {
+  margin: 30px 0;
+  font-size: 1.4rem;
+  color: #9ad7ff;
+  animation: floatSparkle 2.5s ease-in-out infinite;
+  position: relative;
+  z-index: 3;
+}
+
+@keyframes floatSparkle {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* ================= FINAL LETTER ================= */
+.page:last-child {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(8px);
+}
+
+/* ================= FLOATING HEARTS ================= */
+#heart-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.heart {
+  position: absolute;
+  bottom: -20px;
+  font-size: 18px;
+  animation: floatUp linear forwards;
+  opacity: 0.8;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  10% { opacity: 0.8; }
+  100% {
+    transform: translateY(-120vh) scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* ================= STAR CANVAS ================= */
+#stars {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+/* ================= FLOATING INITIALS ================= */
+.initials {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  font-size: 1.4rem;
+  color: #cfe9ff;
+  opacity: 0.8;
+  animation: floatInit 3s ease-in-out infinite;
+  z-index: 3;
+}
+
+@keyframes floatInit {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 480px) {
+  h1 { font-size: 2.3rem; }
+  h2 { font-size: 1.9rem; }
+  p  { font-size: 1.05rem; }
+  .photo,
+  .card img { width: 280px; }
+}  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0b1f3a;
+  background: linear-gradient(135deg, #9ad7ff, #e8f6ff);
+  cursor: pointer;
+  box-shadow: 0 14px 34px rgba(154, 215, 255, 0.55);
+  transition: all 0.35s ease;
+}
+
+button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgba(154, 215, 255, 0.75);
+}
+
 /* ================= DIVIDER ================= */
 .divider {
   margin: 30px 0;
