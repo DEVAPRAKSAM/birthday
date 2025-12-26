@@ -317,3 +317,28 @@ button:hover {
     opacity: 0;
   }
 }
+/* ===== STAR CANVAS ===== */
+#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.initials {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  font-size: 1.4rem;
+  color: #cfe9ff;
+  opacity: 0.8;
+  animation: floatInit 3s ease-in-out infinite;
+  z-index: 2;
+}
+
+@keyframes floatInit {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
