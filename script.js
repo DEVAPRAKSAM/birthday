@@ -93,3 +93,46 @@ function createHeart() {
 
 // create heart every 500ms
 setInterval(createHeart, 500);
+/* ================= STAR BACKGROUND ================= */
+const canvas = document.getElementById("stars");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+let stars = [];
+for (let i = 0; i < 120; i++) {
+  stars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 1.5,
+    s: Math.random() * 0.5 + 0.2
+  });
+}
+
+function drawStars() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "rgba(255,255,255,0.8)";
+  stars.forEach(star => {
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+    ctx.fill();
+    star.y += star.s;
+    if (star.y > canvas.height) star.y = 0;
+  });
+  requestAnimationFrame(drawStars);
+}
+drawStars();
+function startStory() {
+  intro.style.opacity = "0";
+  setTimeout(() => {
+    intro.style.display = "none";
+    document.getElementById("bgm").play();
+    current = 0;
+    showCard(current);
+  }, 600);
+}
