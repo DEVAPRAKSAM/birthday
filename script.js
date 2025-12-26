@@ -94,3 +94,16 @@ function createHeart() {
   setTimeout(() => heart.remove(), 10000);
 }
 setInterval(createHeart, 600);
+/* ================= TYPING EFFECT ================= */
+const text = "Happy Birthday Vaishnavi 💖";
+let index = 0;
+
+function typeEffect() {
+  if (index < text.length) {
+    document.getElementById("typeText").innerHTML += text.charAt(index);
+    index++;
+    setTimeout(typeEffect, 90);
+  }
+}
+
+window.addEventListener("load", typeEffect);
