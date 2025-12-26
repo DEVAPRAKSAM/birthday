@@ -129,3 +129,14 @@ document.addEventListener("click", function (e) {
 
   setTimeout(() => heart.remove(), 1000);
 });
+/* ================= PASSWORD LOGIC ================= */
+function unlock() {
+  const password = document.getElementById("pwd").value;
+
+  // CHANGE PASSWORD HERE 👇
+  if (password === "vaishnavi") {
+    document.getElementById("lockScreen").style.display = "none";
+  } else {
+    alert("Wrong password 💔");
+  }
+}
