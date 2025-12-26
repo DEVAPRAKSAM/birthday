@@ -1,9 +1,7 @@
 /* ================= GLOBAL ================= */
 
-// Card index
 let current = 0;
 
-// Elements
 const cards = document.querySelectorAll(".card");
 const intro = document.getElementById("intro");
 const finalPage = document.querySelector(".page:last-child");
@@ -27,39 +25,47 @@ function next() {
     current++;
     showCard(current);
   } else {
-    finalPage.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
+    finalPage.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
+/* ================= MUSIC SAFE PLAY ================= */
+function playMusicSafe() {
+  if (!music) return;
+
+  music.volume = 0.5;
+  music.muted = false;
+
+  const p = music.play();
+  if (p !== undefined) {
+    p.catch(() => {
+      console.log("Music blocked – retrying");
     });
   }
 }
 
-/* ================= START STORY (FIXED) ================= */
+/* ================= START STORY ================= */
 function startStory() {
-  // Fade out intro
+  // Fade intro
   intro.style.transition = "opacity 0.6s ease";
   intro.style.opacity = "0";
 
   setTimeout(() => {
     intro.style.display = "none";
 
-    // Play music SAFELY (browser-friendly)
-    if (music) {
-      music.volume = 0.5;
-      const playPromise = music.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          console.log("Autoplay blocked, user interaction needed");
-        });
-      }
-    }
+    // Play music AFTER user gesture
+    playMusicSafe();
+
+    // Force resume after animations/scroll
+    setTimeout(playMusicSafe, 800);
+    setTimeout(playMusicSafe, 2000);
 
     current = 0;
     showCard(current);
   }, 600);
 }
 
-/* ================= CONFETTI BLAST ================= */
+/* ================= CONFETTI ================= */
 function blast() {
   confetti({
     particleCount: 120,
@@ -67,34 +73,30 @@ function blast() {
     scalar: 0.9,
     origin: { y: 0.6 }
   });
-
-  setTimeout(() => {
-    confetti({
-      particleCount: 70,
-      spread: 70,
-      scalar: 0.8,
-      origin: { y: 0.5 }
-    });
-  }, 700);
 }
 
 /* ================= FLOATING HEARTS ================= */
 function createHeart() {
   const heart = document.createElement("div");
-  heart.classList.add("heart");
+  heart.className = "heart";
 
-  const emojis = ["💙", "❤️", "💖"];
-  heart.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+  const icons = ["💙", "❤️", "💖"];
+  heart.innerText = icons[Math.floor(Math.random() * icons.length)];
 
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.animationDuration = 6 + Math.random() * 4 + "s";
 
   heartContainer.appendChild(heart);
 
-  setTimeout(() => {
-    heart.remove();
-  }, 10000);
+  setTimeout(() => heart.remove(), 10000);
 }
 
-// Continuous hearts
-setInterval(createHeart, 500);
+setInterval(createHeart, 600);
+
+/* ================= KEEP MUSIC ALIVE ================= */
+// If browser pauses audio, resume on interaction
+document.addEventListener("click", playMusicSafe);
+document.addEventListener("touchstart", playMusicSafe);
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden) playMusicSafe();
+});
