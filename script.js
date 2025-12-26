@@ -3,14 +3,12 @@
 // Card index
 let current = 0;
 
-// All cards
+// Elements
 const cards = document.querySelectorAll(".card");
-
-// Intro section
 const intro = document.getElementById("intro");
-
-// Final page
 const finalPage = document.querySelector(".page:last-child");
+const music = document.getElementById("bgm");
+const heartContainer = document.getElementById("heart-container");
 
 /* ================= SHOW CARD ================= */
 function showCard(index) {
@@ -29,7 +27,6 @@ function next() {
     current++;
     showCard(current);
   } else {
-    // Last card reached → scroll to final letter
     finalPage.scrollIntoView({
       behavior: "smooth",
       block: "start"
@@ -37,14 +34,26 @@ function next() {
   }
 }
 
-/* ================= START STORY ================= */
+/* ================= START STORY (FIXED) ================= */
 function startStory() {
-  // Hide intro smoothly
-  intro.style.opacity = "0";
+  // Fade out intro
   intro.style.transition = "opacity 0.6s ease";
+  intro.style.opacity = "0";
 
   setTimeout(() => {
     intro.style.display = "none";
+
+    // Play music SAFELY (browser-friendly)
+    if (music) {
+      music.volume = 0.5;
+      const playPromise = music.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          console.log("Autoplay blocked, user interaction needed");
+        });
+      }
+    }
+
     current = 0;
     showCard(current);
   }, 600);
@@ -52,7 +61,6 @@ function startStory() {
 
 /* ================= CONFETTI BLAST ================= */
 function blast() {
-  // Soft first blast
   confetti({
     particleCount: 120,
     spread: 90,
@@ -60,7 +68,6 @@ function blast() {
     origin: { y: 0.6 }
   });
 
-  // Gentle second wave
   setTimeout(() => {
     confetti({
       particleCount: 70,
@@ -70,16 +77,14 @@ function blast() {
     });
   }, 700);
 }
+
 /* ================= FLOATING HEARTS ================= */
-
-const heartContainer = document.getElementById("heart-container");
-
 function createHeart() {
   const heart = document.createElement("div");
   heart.classList.add("heart");
 
-  const hearts = ["💙", "❤️", "💖"];
-  heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+  const emojis = ["💙", "❤️", "💖"];
+  heart.innerText = emojis[Math.floor(Math.random() * emojis.length)];
 
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.animationDuration = 6 + Math.random() * 4 + "s";
@@ -91,16 +96,5 @@ function createHeart() {
   }, 10000);
 }
 
-// create heart every 500ms
+// Continuous hearts
 setInterval(createHeart, 500);
-function startStory() {
-  intro.style.opacity = "0";
-  setTimeout(() => {
-    intro.style.display = "none";
-    document.getElementById("bgm").play();
-    current = 0;
-    showCard(current);
-  }, 600);
-}
-
-
