@@ -114,3 +114,18 @@ function replay() {
 }function replay() {
   window.location.reload();
 }
+/* ================= TAP HEART BURST ================= */
+document.addEventListener("click", function (e) {
+  const heart = document.createElement("div");
+  heart.className = "burst-heart";
+
+  const icons = ["💙", "❤️", "💖"];
+  heart.innerText = icons[Math.floor(Math.random() * icons.length)];
+
+  heart.style.left = e.clientX + "px";
+  heart.style.top = e.clientY + "px";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 1000);
+});
