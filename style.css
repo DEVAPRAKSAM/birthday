@@ -406,3 +406,22 @@ button:hover {
   z-index: 5;
   box-shadow: 0 8px 20px rgba(154,215,255,0.6);
 }
+/* ================= HEART BURST ================= */
+.burst-heart {
+  position: fixed;
+  font-size: 22px;
+  pointer-events: none;
+  animation: burst 1s ease-out forwards;
+  z-index: 4;
+}
+
+@keyframes burst {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-40px) scale(1.8);
+    opacity: 0;
+  }
+}
