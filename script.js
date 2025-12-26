@@ -1,11 +1,14 @@
 /* ================= GLOBAL ================= */
 
 let current = 0;
+
 const cards = document.querySelectorAll(".card");
 const intro = document.getElementById("intro");
 const finalPage = document.querySelector(".page:last-child");
-const music = document.getElementById("bgm");
 const heartContainer = document.getElementById("heart-container");
+
+const music = document.getElementById("bgm");
+const musicBtn = document.getElementById("musicBtn");
 
 /* ================= SHOW CARD ================= */
 function showCard(index) {
@@ -28,31 +31,8 @@ function next() {
   }
 }
 
-/* ================= SAFE MUSIC PLAYBACK ================= */
-const music = document.getElementById("bgm");
-const musicBtn = document.getElementById("musicBtn");
-
-function toggleMusic() {
-  if (music.paused) {
-    music.volume = 0.5;
-    music.play();
-    musicBtn.innerText = "⏸ Pause Music";
-  } else {
-    music.pause();
-    musicBtn.innerText = "🔊 Play Music";
-  }
-}
-
-/* ================= START STORY (USER ACTION) ================= */
+/* ================= START STORY ================= */
 function startStory() {
-  // Start audio on first click
-  playMusicSafe();
-
-  // Also listen for interactions to keep audio alive
-  document.addEventListener("click", playMusicSafe);
-  document.addEventListener("touchstart", playMusicSafe);
-
-  // Fade out intro
   intro.style.transition = "opacity 0.6s ease";
   intro.style.opacity = "0";
 
@@ -61,6 +41,20 @@ function startStory() {
     current = 0;
     showCard(current);
   }, 600);
+}
+
+/* ================= MUSIC TOGGLE (100% SAFE) ================= */
+function toggleMusic() {
+  if (!music) return;
+
+  if (music.paused) {
+    music.volume = 0.5;
+    music.play();
+    musicBtn.innerText = "⏸ Pause Music";
+  } else {
+    music.pause();
+    musicBtn.innerText = "🔊 Play Music";
+  }
 }
 
 /* ================= CONFETTI ================= */
@@ -86,14 +80,20 @@ function blast() {
 function createHeart() {
   const heart = document.createElement("div");
   heart.className = "heart";
+
   const emojis = ["💙", "❤️", "💖"];
   heart.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.animationDuration = 6 + Math.random() * 4 + "s";
+
   heartContainer.appendChild(heart);
+
   setTimeout(() => heart.remove(), 10000);
 }
+
 setInterval(createHeart, 600);
+
 /* ================= TYPING EFFECT ================= */
 const text = "Happy Birthday Vaishnavi 💖";
 let index = 0;
@@ -107,7 +107,10 @@ function typeEffect() {
 }
 
 window.addEventListener("load", typeEffect);
+
 /* ================= REPLAY ================= */
 function replay() {
+  window.location.reload();
+}function replay() {
   window.location.reload();
 }
