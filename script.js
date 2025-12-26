@@ -93,3 +93,14 @@ function createHeart() {
 
 // create heart every 500ms
 setInterval(createHeart, 500);
+function startStory() {
+  intro.style.opacity = "0";
+  setTimeout(() => {
+    intro.style.display = "none";
+    document.getElementById("bgm").play();
+    current = 0;
+    showCard(current);
+  }, 600);
+}
+
+
