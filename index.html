@@ -1,76 +1,146 @@
-<!DOCTYPE html>      <html lang="en">      
-<head>      
-  <meta charset="UTF-8">      
-  <title>For Vaishnavi ❤️</title>        <!-- CSS -->        <link rel="stylesheet" href="style.css">        <!-- Confetti -->        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>      </head>      <body onload="blast()">        <!-- 🌌 STAR BACKGROUND -->      <canvas id="stars"></canvas>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Vaishnavi ❤️</title>
 
-  <!-- 🎵 BACKGROUND MUSIC -->        <audio id="bgm" loop playsinline preload="auto">      
-  <source src="music.mp3" type="audio/mpeg">      
-  </audio>      
- <button id="musicBtn" onclick="toggleMusic()">🔊 Play Music</button>      
-  <!-- ❤️ FLOATING HEARTS -->      
-  <div id="heart-container"></div>        <!-- ================= INTRO PAGE ================= -->        <section class="page" id="intro">      
-    <h1 id="typeText"></h1>      
-    <h1>Happy Birthday Vaishnavi 💖</h1>      <img src="img/her.jpg" class="photo">      
-  
-<p>      
-  You are not just special…<br>      
-  You are my favourite person 😌      
-</p>      
-  
-<button onclick="startStory()">Start 💙</button>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 
-  </section>        <!-- ===== Elegant Divider ===== -->        <div class="divider">      
-    <span>💙</span>      
-  </div>        <p class="center-quote">      
-    “Some people don’t change your life,<br>      
-    they become it 💙”      
-  </p>        <!-- ================= CARD 1 ================= -->        <div class="card active">      
-    <h2>Her Smile 😊</h2>      <img src="img/p1.jpg">      
-  
-<p>      
-  This smile heals me ❤️<br>      
-  It makes everything feel okay 🌸      
-</p>      
-  
-<button onclick="next()">Next</button>
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
 
-  </div>        <!-- ===== Soft Divider ===== -->        <div class="divider">      
-    <span>✨</span>      
-  </div>        <!-- ================= CARD 2 ================= -->        <div class="card">      
-    <h2>My Safe Place 🌸</h2>      <img src="img/p2.jpg">      
-  
-<p>      
-  When the world feels heavy,<br>      
-  you feel like home 🏠      
-</p>      
-  
-<button onclick="next()">Next</button>
+<body onload="blast()">
+  <!-- ================= PASSWORD SCREEN ================= -->
+<div id="lockScreen">
+  <h2>Vaishnavi only 💙</h2>
+  <p>Enter the secret word</p>
+  <input type="password" id="pwd" placeholder="••••••">
+  <br><br>
+  <button onclick="unlock()">Enter 💙</button>
+</div>
 
-  </div>        <!-- ===== Soft Divider ===== -->        <div class="divider">      
-    <span>✨</span>      
-  </div>        <!-- ================= CARD 3 ================= -->        <div class="card">      
-    <h2>Always You 💖</h2>      <img src="img/p3.jpg">      
-  
-<p>      
-  Not perfect days…<br>      
-  but perfect moments with you 😌      
-</p>
+  <!-- 🌌 STAR BACKGROUND -->
+  <canvas id="stars"></canvas>
 
-  </div>        <!-- ===== Sparkle Pause ===== -->        <div class="sparkle">✨ ✨ ✨</div>        <!-- ================= FINAL LETTER ================= -->        <section class="page">      
-    <h2>One Last Thing 💖</h2>      <img src="img/p4.jpg" class="photo">      
-  
-<p>      
-  Vaishnavi…<br><br>      
-  
-  Naa perfect illa 😅<br>      
-  Aana unaku honest ah love pannren ❤️<br><br>      
-  
-  Small moments, silent care,<br>      
-  everyday unaku special ah irukanum nu than en wish 🎂💫<br><br>      
-  
-  Happy Birthday My Love 💕      
-</p>
+  <!-- 🎵 BACKGROUND MUSIC -->
+  <audio id="bgm" loop playsinline preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
 
-  </section>      
-  <button onclick="replay()">Replay 💙</button>        <!-- ===== Ending Sparkle ===== -->        <div class="sparkle">✨ ✨ ✨</div>        <!-- 💙 FLOATING INITIALS -->        <div class="initials">V 💙 D</div>        <!-- ================= JS ================= -->        <script src="script.js"></script>      </body>      
-</html>........ Html code updated kodu please old content erase pana mah
+  <button id="musicBtn" onclick="toggleMusic()">🔊 Play Music</button>
+
+  <!-- ❤️ FLOATING HEARTS -->
+  <div id="heart-container"></div>
+
+  <!-- ================= INTRO PAGE ================= -->
+  <section class="page" id="intro">
+    <h1 id="typeText"></h1>
+    <h1>Happy Birthday Vaishnavi 💖</h1>
+
+    <img src="img/her.jpg" class="photo">
+
+    <p>
+      You are not just special…<br>
+      You are my favourite person 😌
+    </p>
+
+    <button onclick="startStory()">Start 💙</button>
+  </section>
+
+  <!-- ===== Elegant Divider ===== -->
+  <div class="divider">
+    <span>💙</span>
+  </div>
+
+  <p class="center-quote">
+    “Some people don’t change your life,<br>
+    they become it 💙”
+  </p>
+
+  <!-- ================= CARD 1 ================= -->
+  <div class="card active">
+    <h2>Her Smile 😊</h2>
+
+    <img src="img/p1.jpg">
+
+    <p>
+      This smile heals me ❤️<br>
+      It makes everything feel okay 🌸
+    </p>
+
+    <button onclick="next()">Next</button>
+  </div>
+
+  <!-- ===== Soft Divider ===== -->
+  <div class="divider">
+    <span>✨</span>
+  </div>
+
+  <!-- ================= CARD 2 ================= -->
+  <div class="card">
+    <h2>My Safe Place 🌸</h2>
+
+    <img src="img/p2.jpg">
+
+    <p>
+      When the world feels heavy,<br>
+      you feel like home 🏠
+    </p>
+
+    <button onclick="next()">Next</button>
+  </div>
+
+  <!-- ===== Soft Divider ===== -->
+  <div class="divider">
+    <span>✨</span>
+  </div>
+
+  <!-- ================= CARD 3 ================= -->
+  <div class="card">
+    <h2>Always You 💖</h2>
+
+    <img src="img/p3.jpg">
+
+    <p>
+      Not perfect days…<br>
+      but perfect moments with you 😌
+    </p>
+  </div>
+
+  <!-- ===== Sparkle Pause ===== -->
+  <div class="sparkle">✨ ✨ ✨</div>
+
+  <!-- ================= FINAL LETTER ================= -->
+  <section class="page">
+    <h2>One Last Thing 💖</h2>
+
+    <img src="img/p4.jpg" class="photo">
+
+    <p>
+      Vaishnavi…<br><br>
+
+      Naa perfect illa 😅<br>
+      Aana unaku honest ah love pannren ❤️<br><br>
+
+      Small moments, silent care,<br>
+      everyday unaku special ah irukanum nu than en wish 🎂💫<br><br>
+
+      Happy Birthday My Love 💕
+    </p>
+  </section>
+
+  <button onclick="replay()">Replay 💙</button>
+
+  <!-- ===== Ending Sparkle ===== -->
+  <div class="sparkle">✨ ✨ ✨</div>
+
+  <!-- 💙 FLOATING INITIALS -->
+  <div class="initials">V 💙 D</div>
+
+  <!-- ================= JS ================= -->
+  <script src="script.js"></script>
+
+</body>
+</html>
