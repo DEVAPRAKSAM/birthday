@@ -10,117 +10,124 @@
   <!-- Confetti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
-<canvas id="stars"></canvas>
+
 <body onload="blast()">
-  <audio id="bgm" loop>
-  <source src="music.mp3" type="audio/mpeg">
+
+  <!-- 🌌 STAR BACKGROUND -->
+  <canvas id="stars"></canvas>
+
+  <!-- 🎵 BACKGROUND MUSIC -->
+  <audio id="bgm" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
   </audio>
 
-<!-- ================= INTRO PAGE ================= -->
-<section class="page" id="intro">
-  <h1>Happy Birthday Vaishnavi 💖</h1>
+  <!-- ❤️ FLOATING HEARTS -->
+  <div id="heart-container"></div>
 
-  <img src="img/her.jpg" class="photo">
+  <!-- ================= INTRO PAGE ================= -->
+  <section class="page" id="intro">
+    <h1>Happy Birthday Vaishnavi 💖</h1>
 
-  <p>
-    You are not just special…<br>
-    You are my favourite person 😌
+    <img src="img/her.jpg" class="photo">
+
+    <p>
+      You are not just special…<br>
+      You are my favourite person 😌
+    </p>
+
+    <button onclick="startStory()">Start 💙</button>
+  </section>
+
+  <!-- ===== Elegant Divider ===== -->
+  <div class="divider">
+    <span>💙</span>
+  </div>
+
+  <p class="center-quote">
+    “Some people don’t change your life,<br>
+    they become it 💙”
   </p>
 
-  <button onclick="startStory()">Start 💙</button>
-</section>
+  <!-- ================= CARD 1 ================= -->
+  <div class="card active">
+    <h2>Her Smile 😊</h2>
 
-<!-- ===== Elegant Divider ===== -->
-<div class="divider">
-  <span>💙</span>
-</div>
+    <img src="img/p1.jpg">
 
-<p class="center-quote">
-  “Some people don’t change your life,<br>
-  they become it 💙”
-</p>
+    <p>
+      This smile heals me ❤️<br>
+      It makes everything feel okay 🌸
+    </p>
 
-<!-- ================= CARD 1 ================= -->
-<div class="card active">
-  <h2>Her Smile 😊</h2>
+    <button onclick="next()">Next</button>
+  </div>
 
-  <img src="img/p1.jpg">
+  <!-- ===== Soft Divider ===== -->
+  <div class="divider">
+    <span>✨</span>
+  </div>
 
-  <p>
-    This smile heals me ❤️<br>
-    It makes everything feel okay 🌸
-  </p>
+  <!-- ================= CARD 2 ================= -->
+  <div class="card">
+    <h2>My Safe Place 🌸</h2>
 
-  <button onclick="next()">Next</button>
-</div>
+    <img src="img/p2.jpg">
 
-<!-- ===== Soft Divider ===== -->
-<div class="divider">
-  <span>✨</span>
-</div>
+    <p>
+      When the world feels heavy,<br>
+      you feel like home 🏠
+    </p>
 
-<!-- ================= CARD 2 ================= -->
-<div class="card">
-  <h2>My Safe Place 🌸</h2>
+    <button onclick="next()">Next</button>
+  </div>
 
-  <img src="img/p2.jpg">
+  <!-- ===== Soft Divider ===== -->
+  <div class="divider">
+    <span>✨</span>
+  </div>
 
-  <p>
-    When the world feels heavy,<br>
-    you feel like home 🏠
-  </p>
+  <!-- ================= CARD 3 ================= -->
+  <div class="card">
+    <h2>Always You 💖</h2>
 
-  <button onclick="next()">Next</button>
-</div>
+    <img src="img/p3.jpg">
 
-<!-- ===== Soft Divider ===== -->
-<div class="divider">
-  <span>✨</span>
-</div>
+    <p>
+      Not perfect days…<br>
+      but perfect moments with you 😌
+    </p>
+  </div>
 
-<!-- ================= CARD 3 ================= -->
-<div class="card">
-  <h2>Always You 💖</h2>
+  <!-- ===== Sparkle Pause ===== -->
+  <div class="sparkle">✨ ✨ ✨</div>
 
-  <img src="img/p3.jpg">
+  <!-- ================= FINAL LETTER ================= -->
+  <section class="page">
+    <h2>One Last Thing 💖</h2>
 
-  <p>
-    Not perfect days…<br>
-    but perfect moments with you 😌
-  </p>
+    <img src="img/p4.jpg" class="photo">
 
-  
-</div>
+    <p>
+      Vaishnavi…<br><br>
 
-<!-- ===== Sparkle Pause ===== -->
-<div class="sparkle">✨ ✨ ✨</div>
+      Naa perfect illa 😅<br>
+      Aana unaku honest ah love pannren ❤️<br><br>
 
-<!-- ================= FINAL LETTER ================= -->
-<section class="page">
-  <h2>One Last Thing 💖</h2>
+      Small moments, silent care,<br>
+      everyday unaku special ah irukanum nu than en wish 🎂💫<br><br>
 
-  <img src="img/p4.jpg" class="photo">
+      Happy Birthday My Love 💕
+    </p>
+  </section>
 
-  <p>
-    Vaishnavi…<br><br>
+  <!-- ===== Ending Sparkle ===== -->
+  <div class="sparkle">✨ ✨ ✨</div>
 
-    Naa perfect illa 😅<br>
-    Aana unaku honest ah love pannren ❤️<br><br>
-
-    Small moments, silent care,<br>
-    everyday unaku special ah irukanum nu than en wish 🎂💫<br><br>
-
-    Happy Birthday My Love 💕
-  </p>
-</section>
-
-<!-- ===== Ending Sparkle ===== -->
-<div class="sparkle">✨ ✨ ✨</div>
+  <!-- 💙 FLOATING INITIALS -->
   <div class="initials">V 💙 D</div>
 
-<!-- ================= JS ================= -->
-<script src="script.js"></script>
+  <!-- ================= JS ================= -->
+  <script src="script.js"></script>
 
 </body>
-  <div id="heart-container"></div>
 </html>
