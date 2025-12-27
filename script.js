@@ -147,3 +147,37 @@ function unlock() {
 window.addEventListener("load", () => {
   cards.forEach(card => card.classList.remove("active"));
 });
+/* ================= LONG PRESS HUG ================= */
+let hugTimer;
+
+document.addEventListener("mousedown", startHug);
+document.addEventListener("touchstart", startHug);
+
+document.addEventListener("mouseup", endHug);
+document.addEventListener("touchend", endHug);
+
+function startHug() {
+  hugTimer = setTimeout(() => {
+    document.getElementById("hugOverlay").style.display = "flex";
+  }, 800); // long press time
+}
+
+function endHug() {
+  clearTimeout(hugTimer);
+  document.getElementById("hugOverlay").style.display = "none";
+}
+function playVoice() {
+  document.getElementById("voice").play();
+}
+
+function toggleMode() {
+  document.body.classList.toggle("night");
+}
+let tapCount = 0;
+
+document.addEventListener("click", () => {
+  tapCount++;
+  if (tapCount === 5) {
+    document.getElementById("secret").style.display = "block";
+  }
+});
