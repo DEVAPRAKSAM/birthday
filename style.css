@@ -455,3 +455,43 @@ button:hover {
   text-align: center;
   font-size: 16px;
 }
+/* ================= HUG EFFECT ================= */
+#hugOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+#hugOverlay p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.hugHeart {
+  font-size: 4rem;
+  animation: hugBeat 1s infinite;
+}
+
+@keyframes hugBeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+#modeToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 5;
+}
+
+body.night {
+  background: #050b18;
+}
