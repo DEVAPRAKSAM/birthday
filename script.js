@@ -33,11 +33,14 @@ function next() {
 
 /* ================= START STORY ================= */
 function startStory() {
+  // Fade out intro
   intro.style.transition = "opacity 0.6s ease";
   intro.style.opacity = "0";
 
   setTimeout(() => {
     intro.style.display = "none";
+
+    // Start from FIRST card
     current = 0;
     showCard(current);
   }, 600);
@@ -140,3 +143,7 @@ function unlock() {
     alert("Wrong password 💔");
   }
 }
+// Hide all cards on initial load
+window.addEventListener("load", () => {
+  cards.forEach(card => card.classList.remove("active"));
+});
