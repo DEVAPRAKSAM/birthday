@@ -10,8 +10,13 @@
   <!-- Confetti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
-
+<div id="hugOverlay">
+  <div class="hugHeart">❤️</div>
+  <p>Virtual Hug 🫂</p>
+</div>
 <body onload="blast()">
+  <div id="modeToggle" onclick="toggleMode()">🌙</div>
+  
   <!-- ================= PASSWORD SCREEN ================= -->
 <div id="lockScreen">
   <h2>Vaishnavi only 💙</h2>
@@ -175,8 +180,15 @@
       Happy Birthday My Love 💕
     </p>
   </section>
+  <button onclick="playVoice()">Tap to listen 🎧</button>
+<audio id="voice">
+  <source src="voice.mp3" type="audio/mpeg">
+</audio>
 
   <button onclick="replay()">Replay 💙</button>
+  <div id="secret" style="display:none; margin-top:20px;">
+  💙 Forever Us 💙
+  </div>
 
   <!-- ===== Ending Sparkle ===== -->
   <div class="sparkle">✨ ✨ ✨</div>
